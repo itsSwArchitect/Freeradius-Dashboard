@@ -1,0 +1,230 @@
+General Styles
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: auto;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+header p {
+    color: #777;
+    font-size: 1.2rem;
+}
+
+section.section {
+    margin: 20px 0;
+}
+
+section h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.module-list, .site-list {
+    width: 100%;
+}
+
+h3 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(208, 9, 9, 0.1);
+}
+
+ul li button {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul li button:hover {
+    background-color: #45a049;
+}
+.config-edit {
+    width: 100%; /* Increase the overall width */
+    max-width: 800px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center it horizontally */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+textarea {
+    width: 98%;
+    height: 500px; /* Increase height */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+/* Blue button */
+button.blue {
+    background-color: #008CBA; /* Blue */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #777;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .module-container, .site-container {
+        flex-direction: column;
+    }
+
+    .module-list, .site-list {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* General container styling for modules and sites */
+.site-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+/* General container styling for modules and sites */
+.module-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+
+
+.site-column {
+    width: 30%;
+}
+
+.module-column {
+    width: 30%;
+}
+
+
+.middle-column {
+    width: 40%; 
+    text-align: center;
+
+    border-radius: 1px;
+    padding: 10px;
+}
+
+/* Optional: Add some styling to differentiate all columns */
+.module-list, .site-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Hidden sections */
+.module-container.hidden, .site-container.hidden {
+    display: none;
+}
+
+h2 {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+h2:hover {
+    color: #0056b3;
+}
+
+h4 {
+    color: #af4c4c;
+    margin-bottom: 15px;
+}
+

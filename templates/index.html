@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeRADIUS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>FreeRADIUS Dashboard</h1>
+            <p>Manage modules and sites, view and edit configurations</p>
+        </header>
+
+        <main>
+            <!-- <section class="section">
+                <h2>Modules</h2>
+                <div class="module-container">
+                    <div class="module-list">
+                        <h3>Enabled Modules</h3>
+                        <ul id="enabled-modules"></ul>
+                    </div>
+                    <div class="module-list">
+                        <h3>Disabled Modules</h3>
+                        <ul id="disabled-modules"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Sites</h2>
+                <div class="site-container">
+                    <div class="site-list">
+                        <h3>Enabled Sites</h3>
+                        <ul id="enabled-sites"></ul>
+                    </div>
+                    <div class="site-list">
+                        <h3>Disabled Sites</h3>
+                        <ul id="disabled-sites"></ul>
+                    </div>
+                </div>
+            </section> -->
+            <!-- <section class="section">
+                <h2 onclick="toggleVisibility('module-container')">Modules</h2>
+                <div id="module-container" class="module-container">
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Enabled Modules</h3>
+                            <ul id="enabled-modules"></ul>
+                        </div>
+                    </div>
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Disabled Modules</h3>
+                            <ul id="disabled-modules"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 onclick="toggleVisibility('site-container')">Sites</h2>
+                <div id="site-container" class="site-container">
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Enabled Sites</h3>
+                            <ul id="enabled-sites"></ul>
+                        </div>
+                    </div>
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Disabled Sites</h3>
+                            <ul id="disabled-sites"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+
+
+            <!-- <section class="section">
+                <h2 onclick="toggleVisibility('module-container')">Modules</h2>
+                <div id="module-container" class="module-container hidden">
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Enabled Modules</h3>
+                            <ul id="enabled-modules"></ul>
+                        </div>
+                    </div>
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Disabled Modules</h3>
+                            <ul id="disabled-modules"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 onclick="toggleVisibility('site-container')">Sites</h2>
+                <div id="site-container" class="site-container hidden">
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Enabled Sites</h3>
+                            <ul id="enabled-sites"></ul>
+                        </div>
+                    </div>
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Disabled Sites</h3>
+                            <ul id="disabled-sites"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- <section class="section">
+                <h2 onclick="toggleVisibility('module-container')">Modules</h2>
+                <div id="module-container" class="module-container hidden">
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Enabled Modules</h3>
+                            <ul id="enabled-modules"></ul>
+                        </div>
+                    </div>
+                    <div class="middle-column">
+                        <div class="config-edit">
+                            <div class="select-item">
+                                <label for="item-select">Select a Module or Site:</label>
+                                <select id="item-select" onchange="loadConfig(this.value)">
+                                    <option value="">-- Select an Item --</option>
+                                </select>
+                            </div>
+                            <textarea id="item-config" placeholder="Configuration will be displayed here..."
+                                oninput="adjustTextarea(this)"></textarea><br>
+                            <button id="save-config" onclick="saveConfig()">Save Configuration</button>
+                        </div>
+                    </div>
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Disabled Modules</h3>
+                            <ul id="disabled-modules"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section class="section">
+                <h2 onclick="toggleVisibility('module-container')">Modules</h2>
+                <div id="module-container" class="module-container hidden">
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Enabled Modules</h3>
+                            <ul id="enabled-modules"></ul>
+                        </div>
+                    </div>
+                    <div class="middle-column">
+                        <div class="config-edit">
+                            <div class="select-item">
+                                <h3>Edit Module-Enabled Configuration</h3>
+                                <label for="item-select">Select a Module:</label>
+                                <select id="item-select" onchange="loadConfig(this.value)">
+                                    <option value="">-- Select an Item --</option>
+                                </select>
+                            </div>
+                            <textarea id="item-config" placeholder="Configuration will be displayed here..." oninput="adjustTextarea(this)"></textarea><br>
+                            <button id="save-config" onclick="saveConfig()">Save Configuration</button>
+                        </div>
+                    </div>
+                    <div class="module-column">
+                        <div class="module-list">
+                            <h3>Disabled Modules</h3>
+                            <ul id="disabled-modules"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="section">
+                <h2 onclick="toggleVisibility('site-container')">Sites</h2>
+                <div id="site-container" class="site-container hidden">
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Enabled Sites</h3>
+                            <ul id="enabled-sites"></ul>
+                        </div>
+                    </div>
+
+  
+                    <div class="middle-column">
+                        <!-- Edit Site-Enabled Configuration Section -->
+                        <div class="config-edit">
+                            <h3>Edit Site-Enabled Configuration</h3>
+                            <label for="site-select">Select a Site:</label>
+                            <select id="site-select" onchange="loadSiteConfig(this.value)">
+                                <option value="">-- Select a site --</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                            <!-- <textarea id="site-config" rows="20" cols="80"></textarea> -->
+                            <textarea id="site-config" placeholder="Configuration will be displayed here..." oninput="adjustTextarea(this)"></textarea><br>
+
+                            <button onclick="saveSiteConfig()">Save Configuration</button>
+                        </div>
+                </div>
+
+                    <div class="site-column">
+                        <div class="site-list">
+                            <h3>Disabled Sites</h3>
+                            <ul id="disabled-sites"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <div class="container">
+                <header>
+                    <h1>Edit Radiusd Configuration</h1>
+                    <button id="edit-config" onclick="openConfigEditor()">Edit Radiusd Configuration</button>
+                </header>
+
+                <div id="editor-container" style="display:none;">
+                    <h2>Radiusd.conf Configuration</h2>
+                    <textarea id="radiusd-config" rows="20" cols="100"></textarea><br>
+                    <button id="save-config" onclick="saveRadConfig()">Save Configuration</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 FreeRADIUS Dashboard by Abid Ali</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>
