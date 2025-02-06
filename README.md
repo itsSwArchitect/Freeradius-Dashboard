@@ -29,3 +29,7 @@ This project is a web-based dashboard for managing FreeRADIUS configurations, en
 ```bash
 git clone https://github.com/yourusername/freeradius-dashboard.git
 cd freeradius-dashboard
+```
+
+# Demo
+![Alt Text](https://github.com/itsSwArchitect/Freeradius-Dashboard/blob/main/demo.gif)
